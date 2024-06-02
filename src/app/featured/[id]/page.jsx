@@ -1,6 +1,7 @@
 "use client";
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react';
+import Hero from './components/Hero'
 
 const PostDetails = () => {
     const [post, setPost ] = useState();
@@ -23,8 +24,11 @@ const PostDetails = () => {
 
 
     return (
-        <div className='mt-[120px]'>
-        {post?.title}
+        <div className='h-screen mt-[120px]'>
+            <Hero
+                title={post?.title}
+                body={post?.body}
+            />
            
         </div>
       );
