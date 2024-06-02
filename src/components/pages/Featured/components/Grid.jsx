@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect, useState } from 'react';
 import { BentoGrid, BentoGridItem } from "@components/ui/bento-grid";
 import Link from 'next/link';
+import Card from './Card';
 import {
   IconArrowWaveRightUp,
   IconBoxAlignRightFilled,
@@ -32,25 +33,21 @@ export default function Grid() {
   }, [])
   console.log("posts::", posts)
   return (
-    <BentoGrid className="max-w-4xl mx-auto">
+    <div class="grid grid-cols-4 gap-4">
       {posts.map((item, i) => (
         <Link
             href={`/featured/${item?.id}`}
             key={item?.id}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+           
         >
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.body}
-          header={<Skeleton/>}
-          icon={item.icon}
-         
-          
+        <Card
+          id={item?.id}
+          title={item?.title}
+          body={item?.body}
         />
         </Link>
       ))}
-    </BentoGrid>
+    </div>
   );
 }
 const Skeleton = () => (
