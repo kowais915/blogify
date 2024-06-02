@@ -24,7 +24,7 @@ const PostDetails = () => {
 
 
     return (
-        <div className='h-screen mt-[120px]'>
+        <div className='h-screen '>
             <Hero
                 title={post?.title}
                 body={post?.body}
