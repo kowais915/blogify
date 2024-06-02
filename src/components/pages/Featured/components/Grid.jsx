@@ -14,6 +14,9 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 
+import { HoverEffect } from "@components/ui/card-hover-effect";;
+
+
 export default function Grid() {
   const [posts, setPosts] = useState([]);
 
@@ -33,21 +36,9 @@ export default function Grid() {
   }, [])
   console.log("posts::", posts)
   return (
-    <div class="grid grid-cols-4 gap-4">
-      {posts.map((item, i) => (
-        <Link
-            href={`/featured/${item?.id}`}
-            key={item?.id}
-           
-        >
-        <Card
-          id={item?.id}
-          title={item?.title}
-          body={item?.body}
-        />
-        </Link>
-      ))}
-    </div>
+    <div className="max-w-5xl mx-auto px-8">
+    <HoverEffect items={posts} />
+  </div> 
   );
 }
 const Skeleton = () => (
