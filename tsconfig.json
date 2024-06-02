@@ -17,7 +17,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
+      "@lib/*": ["src/lib/*"],
+      "@components/*": ["src/components/*"],
+      "@app/*": ["src/app/*"],
       "@/*": ["./src/*"]
     }
   },
