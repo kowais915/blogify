@@ -1,5 +1,5 @@
 ## Getting Started
-
+This project is written in Next.JS.
 First, run the development server:
 
 ```bash
